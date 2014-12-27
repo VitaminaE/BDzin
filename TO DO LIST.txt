@@ -6,6 +6,7 @@ Coisas para fazer :
 - criar formulario de entrada de dados    PRIMEIRA PARTE FEITA
 - Fazer a entrada de dados no BD
 - Linkar as páginas
+- Procurar como fazer o negocio com AJAX
 
 para o final :
 
