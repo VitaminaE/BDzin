@@ -45,27 +45,35 @@
 
 				mysql_select_db('Manutencao', $dbLink); // Seleciona o BD da manutencao
 
-				// Realiza a consulta, no caso de erro fecha a conexao
-				$sql = "SELECT * FROM " .$table ;
-				$result = mysql_query($sql) or die(mysql_error()); 
+				// Checa se houve a entrada do usuario
+				if(!$table){
+					echo "<h2>Nenhum Resultado encontrado :(</h2>";
+				}
+				else{
+					
+					// Realiza a consulta, no caso de erro fecha a conexao
+					$sql = "SELECT * FROM " .$table ;
+					$result = mysql_query($sql) or die(mysql_error()); 
 
-				// Imprime os nomes das colunas como o cabecalho da tabela
-				echo "<table class=\"table table-stripped table-bordered\"><tr>";
-				for($i = 0; $i < mysql_num_fields($result); $i++) {
-				    $field_info = mysql_fetch_field($result, $i);
-				    echo "<th>" .$field_info->name. "</th>"; // Acessa o campo nome em field_info
+					// Imprime os nomes das colunas como o cabecalho da tabela
+					echo "<table class=\"table table-stripped table-bordered\"><tr>";
+					for($i = 0; $i < mysql_num_fields($result); $i++) {
+					    $field_info = mysql_fetch_field($result, $i);
+					    echo "<th>" .$field_info->name. "</th>"; // Acessa o campo nome em field_info
+					}
+
+					// Imprime os dados na tabela
+					while($row = mysql_fetch_row($result)) {
+					    echo "<tr>";
+					    foreach($row as $_column) {
+					        echo "<td>" .$_column. "</td>";
+					    }
+					    echo "</tr>";
+					}
+
+					echo "</table>";
 				}
 
-				// Imprime os dados na tabela
-				while($row = mysql_fetch_row($result)) {
-				    echo "<tr>";
-				    foreach($row as $_column) {
-				        echo "<td>" .$_column. "</td>";
-				    }
-				    echo "</tr>";
-				}
-
-				echo "</table>";
 				?>
 			</div>               
 		</div>
@@ -78,3 +86,8 @@
 	</body>
 
 </html>
+
+
+
+
+				
