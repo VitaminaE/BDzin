@@ -1,0 +1,10 @@
+Coisas para fazer :
+
+- melhorar a busca
+- modificar o sistema de login
+- procurar como fazer o cadastro direto
+- criar formulario de entrada de dados
+
+para o final :
+
+- melhorar o layout
