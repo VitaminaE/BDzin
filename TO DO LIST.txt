@@ -3,7 +3,9 @@ Coisas para fazer :
 - melhorar a busca
 - modificar o sistema de login
 - procurar como fazer o cadastro direto
-- criar formulario de entrada de dados
+- criar formulario de entrada de dados    PRIMEIRA PARTE FEITA
+- Fazer a entrada de dados no BD
+- Linkar as páginas
 
 para o final :
 
